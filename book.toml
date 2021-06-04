@@ -1,0 +1,6 @@
+[book]
+authors = ["L1ghtman2k"]
+language = "en"
+multilingual = false
+src = "src"
+title = "ScoreTrak"
