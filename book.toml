@@ -8,3 +8,4 @@ title = "ScoreTrak"
 
 [output.html]
 preferred-dark-theme = "ayu"
+default-theme = "ayu"
