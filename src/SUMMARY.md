@@ -1,10 +1,9 @@
 # Summary
 [Intro](Intro.md)
 - [Overview]()
-    - [Quick Start]()
+    - [Quick Start](deployment/quick-start.md)
     - [Design]()
     - [Model]()
-- [Deployment]()
 - [Server]()
 - [Client]()
 - [Checks]()
