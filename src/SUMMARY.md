@@ -3,7 +3,7 @@
 - [Overview]()
     - [Quick Start](deployment/quick-start.md)
     - [Design]()
-    - [Model]()
+    - [Model](models.md)
 - [Server]()
 - [Client]()
 - [Checks]()
