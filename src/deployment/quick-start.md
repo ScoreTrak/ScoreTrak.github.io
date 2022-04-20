@@ -22,7 +22,9 @@ Ensure you have the following prerequisties installed.
 
 ### Steps
 
-1. Install Scoretrak Helm Chart
+1. Setup your Kubernetes Cluster
+
+2. Install Scoretrak Helm Chart
 
 Install scoretrak's helm chart repo from https://github.com/scoretrak/helm-charts
 
@@ -30,11 +32,11 @@ Install scoretrak's helm chart repo from https://github.com/scoretrak/helm-chart
 $ helm repo add scoretrak https://scoretrak.github.io/helm-charts
 ```
 
-2. Customize
+3. Customize
 
 Customize the default yaml file located in the [scoretrak helm chart](https://github.com/scoretrak/helm-charts/charts/scoretrak/values.yaml) to fit your environment.
 
-3. Deploy
+4. Deploy
 
 Install the helm chart
 
