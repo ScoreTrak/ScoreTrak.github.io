@@ -4,49 +4,28 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>ScoreTrak</title>
-        
         <meta name="robots" content="noindex" />
-        
-        
-
-
         <!-- Custom HTML head -->
-        
-
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="favicon.svg">
-        
-        
         <link rel="shortcut icon" href="favicon.png">
-        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-        
         <link rel="stylesheet" href="css/print.css" media="print">
-        
-
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="fonts/fonts.css">
-        
-
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
         <link rel="stylesheet" href="tomorrow-night.css">
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -97,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Intro.html">Intro</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Overview</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">1.1.</strong> Quick Start</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.</strong> Design</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.3.</strong> Model</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Deployment</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Server</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Client</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Checks</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="Intro.html">Intro</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> Overview</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="deployment/quick-start.html"><strong aria-hidden="true">1.1.</strong> Quick Start</a></li><li class="chapter-item expanded "><a href="models.html"><strong aria-hidden="true">1.2.</strong> Model</a></li></ol></li><li class="chapter-item expanded "><a href="server/main.html"><strong aria-hidden="true">2.</strong> Server</a></li><li class="chapter-item expanded "><a href="client/main.html"><strong aria-hidden="true">3.</strong> Client</a></li><li class="chapter-item expanded "><a href="checks/types.html"><strong aria-hidden="true">4.</strong> Checks</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -105,7 +84,6 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -122,28 +100,20 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">ScoreTrak</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
-                        
-
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
                         <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
@@ -154,8 +124,6 @@
                         </ul>
                     </div>
                 </div>
-                
-
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -169,65 +137,110 @@
                     <main>
                         <p><img src="./images/logo.svg" alt="Alt text" title="Logo" /></p>
 <h1 align="center">Security Competition Scoring Engine</h1>
-<p>ScoreTrak is a scoring engine that tests the availability of services on the network. </p>
+<p>ScoreTrak is a scoring engine that tests the availability of services on the network.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="quick-start"><a class="header" href="#quick-start">Quick Start</a></h1>
+<p>ScoreTrak currently supports deploying via docker, docker swarm and kubernetes. You can find the docker container stored in the github container registry located in the <a href="https://github.com/orgs/ScoreTrak/packages">scoretrak org page</a>.</p>
+<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
+<p>You can deploy on many platforms and each can found below.</p>
+<ol>
+<li>[Kubernetes](#Deploy to Kubernetes)</li>
+</ol>
+<h2 id="deploy-to-kubernetes"><a class="header" href="#deploy-to-kubernetes">Deploy to Kubernetes</a></h2>
+<p>Notes:</p>
+<ul>
+<li>You must have at least 1 node labeled with scoretrak_worker=&lt;your_internal_label&gt; so scoretrak can correctly deploy workers.</li>
+</ul>
+<h3 id="prerequisties"><a class="header" href="#prerequisties">Prerequisties</a></h3>
+<p>Ensure you have the following prerequisties installed.</p>
+<ul>
+<li><a href="https://helm.sh/docs/intro/install/#through-package-managers">helm</a></li>
+</ul>
+<h3 id="steps"><a class="header" href="#steps">Steps</a></h3>
+<ol>
+<li>
+<p>Setup your Kubernetes Cluster</p>
+</li>
+<li>
+<p>Install Scoretrak Helm Chart</p>
+</li>
+</ol>
+<p>Install scoretrak's helm chart repo from https://github.com/scoretrak/helm-charts</p>
+<pre><code class="language-bash">$ helm repo add scoretrak https://scoretrak.github.io/helm-charts
+</code></pre>
+<ol start="3">
+<li>Customize</li>
+</ol>
+<p>Customize the default yaml file located in the <a href="https://github.com/scoretrak/helm-charts/charts/scoretrak/values.yaml">scoretrak helm chart</a> to fit your environment.</p>
+<ol start="4">
+<li>Deploy</li>
+</ol>
+<p>Install the helm chart</p>
+<pre><code class="language-bash">helm install --timeout 1800 -f customized-values.yaml scoretrak/scoretrak
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="models"><a class="header" href="#models">Models</a></h1>
+<p>The database tables and relations diagram can be found below.</p>
+<h2 id="diagram"><a class="header" href="#diagram">Diagram</a></h2>
+<p>Diagram can be found at <a href="https://drawsql.app/scoretrak/diagrams/scoretrak">drawsql.app</a>.</p>
+<p><img src="images/sql_diagram.png" alt="img.png" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="server"><a class="header" href="#server">Server</a></h1>
+<p>The Scoretrak scoring server is a golang application responsible to executing or delegating checks of services.</p>
+<h2 id="modes"><a class="header" href="#modes">Modes</a></h2>
+<h3 id="single-node-master-no-workers"><a class="header" href="#single-node-master-no-workers">Single Node Master, No Workers</a></h3>
+<p>In a small environment, you can run one instance of the scoring engine that will be responsible for executing checks on the services and responding to client requests.</p>
+<h3 id="single-node-master-1-workers"><a class="header" href="#single-node-master-1-workers">Single Node Master, 1+ Workers</a></h3>
+<p>In a medium environment, you can run one instance of the scoring engine that will be responsible for delegating checks to workers via a queue platform. While the single node master will also be responsible for responding to client requests.</p>
+<h3 id="multi-node-master-1-workers"><a class="header" href="#multi-node-master-1-workers">Multi Node Master, 1+ Workers</a></h3>
+<p>In a large environment, you can run multiple instances of the scoring engine that will be responsible for delegating checks to workers via a queue platform. While the multi node masters will also be responsible for responding to client requests.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="web-client"><a class="header" href="#web-client">Web Client</a></h1>
+<p>The web client is how the black, red and blue team will be interacting with the scoring services from setting up the checks and checking services.</p>
+<p>Each User will have an assigned role of Black, Red Blue.</p>
+<p>The Black team role will have access to setting up hosts, teams, services, and user accounts.</p>
+<p>The Blue team role will have the ability to view the status of their services, as well as their competiters. In addition, changing the connection properties of their services if the black team allows it.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="checks"><a class="header" href="#checks">Checks</a></h1>
+<p>Scoretrak can check many things from HTTP to WinRM. The connection properties are editable by black team and blue team.</p>
+<h2 id="executable-checks"><a class="header" href="#executable-checks">Executable Checks</a></h2>
+<ul>
+<li>FTP</li>
+<li>SSH</li>
+<li>WinRM</li>
+<li>Ping</li>
+<li>HTTP</li>
+<li>LDAP</li>
+<li>DNS</li>
+<li>SMB</li>
+<li>IMAP</li>
+<li>SQL</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
-
-                        
-
                         <div style="clear: both"></div>
                     </nav>
                 </div>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
-
-                
             </nav>
 
         </div>
 
-        
-
-        
-
-        
-
-        
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-
-        
-
-        
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
-
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-
-        
-        
         <script type="text/javascript">
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
-        
-        
-
     </body>
 </html>
