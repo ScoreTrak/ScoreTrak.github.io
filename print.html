@@ -137,46 +137,16 @@
                     <main>
                         <p><img src="./images/logo.svg" alt="Alt text" title="Logo" /></p>
 <h1 align="center">Security Competition Scoring Engine</h1>
-<p>ScoreTrak is a scoring engine that tests the availability of services on the network.</p>
+<p>ScoreTrak is a scoring engine that tests the availability of services in a cyber-security competition network.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="quick-start"><a class="header" href="#quick-start">Quick Start</a></h1>
-<p>ScoreTrak currently supports deploying via docker, docker swarm and kubernetes. You can find the docker container stored in the github container registry located in the <a href="https://github.com/orgs/ScoreTrak/packages">scoretrak org page</a>.</p>
-<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
-<p>You can deploy on many platforms and each can found below.</p>
+<p>ScoreTrak currently supports deploying via docker and kubernetes. You can find the docker container stored in the github container registry located in the <a href="https://github.com/orgs/ScoreTrak/packages">scoretrak org page</a>.</p>
+<h2 id="deployment-options"><a class="header" href="#deployment-options">Deployment Options</a></h2>
+<p>You can deploy on many platforms and each can be found below.</p>
 <ol>
-<li>[Kubernetes](#Deploy to Kubernetes)</li>
+<li><a href="deployment/./kubernetes.html">Kubernetes</a> (Preferred)</li>
+<li>Docker (Coming Soon)</li>
+<li>Local (Coming Soon)</li>
 </ol>
-<h2 id="deploy-to-kubernetes"><a class="header" href="#deploy-to-kubernetes">Deploy to Kubernetes</a></h2>
-<p>Notes:</p>
-<ul>
-<li>You must have at least 1 node labeled with scoretrak_worker=&lt;your_internal_label&gt; so scoretrak can correctly deploy workers.</li>
-</ul>
-<h3 id="prerequisties"><a class="header" href="#prerequisties">Prerequisties</a></h3>
-<p>Ensure you have the following prerequisties installed.</p>
-<ul>
-<li><a href="https://helm.sh/docs/intro/install/#through-package-managers">helm</a></li>
-</ul>
-<h3 id="steps"><a class="header" href="#steps">Steps</a></h3>
-<ol>
-<li>
-<p>Setup your Kubernetes Cluster</p>
-</li>
-<li>
-<p>Install Scoretrak Helm Chart</p>
-</li>
-</ol>
-<p>Install scoretrak's helm chart repo from https://github.com/scoretrak/helm-charts</p>
-<pre><code class="language-bash">$ helm repo add scoretrak https://scoretrak.github.io/helm-charts
-</code></pre>
-<ol start="3">
-<li>Customize</li>
-</ol>
-<p>Customize the default yaml file located in the <a href="https://github.com/scoretrak/helm-charts/charts/scoretrak/values.yaml">scoretrak helm chart</a> to fit your environment.</p>
-<ol start="4">
-<li>Deploy</li>
-</ol>
-<p>Install the helm chart</p>
-<pre><code class="language-bash">helm install --timeout 1800 -f customized-values.yaml scoretrak/scoretrak
-</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="models"><a class="header" href="#models">Models</a></h1>
 <p>The database tables and relations diagram can be found below.</p>
 <h2 id="diagram"><a class="header" href="#diagram">Diagram</a></h2>
@@ -192,10 +162,11 @@
 <h3 id="multi-node-master-1-workers"><a class="header" href="#multi-node-master-1-workers">Multi Node Master, 1+ Workers</a></h3>
 <p>In a large environment, you can run multiple instances of the scoring engine that will be responsible for delegating checks to workers via a queue platform. While the multi node masters will also be responsible for responding to client requests.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="web-client"><a class="header" href="#web-client">Web Client</a></h1>
-<p>The web client is how the black, red and blue team will be interacting with the scoring services from setting up the checks and checking services.</p>
-<p>Each User will have an assigned role of Black, Red Blue.</p>
+<p>The web client is how the black, red, and blue team will be interacting with the scoring services from setting up the checks and checking services.</p>
+<h2 id="user-roles"><a class="header" href="#user-roles">User Roles</a></h2>
+<p>Each User will have an assigned role of Black, Red, Blue.</p>
 <p>The Black team role will have access to setting up hosts, teams, services, and user accounts.</p>
-<p>The Blue team role will have the ability to view the status of their services, as well as their competiters. In addition, changing the connection properties of their services if the black team allows it.</p>
+<p>The Blue team role will have the ability to view the status of their services, as well as their competitors. In addition, changing the connection properties of their services if the black team allows it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="checks"><a class="header" href="#checks">Checks</a></h1>
 <p>Scoretrak can check many things from HTTP to WinRM. The connection properties are editable by black team and blue team.</p>
 <h2 id="executable-checks"><a class="header" href="#executable-checks">Executable Checks</a></h2>

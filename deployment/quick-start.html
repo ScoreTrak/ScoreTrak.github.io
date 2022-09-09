@@ -135,44 +135,14 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="quick-start"><a class="header" href="#quick-start">Quick Start</a></h1>
-<p>ScoreTrak currently supports deploying via docker, docker swarm and kubernetes. You can find the docker container stored in the github container registry located in the <a href="https://github.com/orgs/ScoreTrak/packages">scoretrak org page</a>.</p>
-<h2 id="usage"><a class="header" href="#usage">Usage</a></h2>
-<p>You can deploy on many platforms and each can found below.</p>
+<p>ScoreTrak currently supports deploying via docker and kubernetes. You can find the docker container stored in the github container registry located in the <a href="https://github.com/orgs/ScoreTrak/packages">scoretrak org page</a>.</p>
+<h2 id="deployment-options"><a class="header" href="#deployment-options">Deployment Options</a></h2>
+<p>You can deploy on many platforms and each can be found below.</p>
 <ol>
-<li>[Kubernetes](#Deploy to Kubernetes)</li>
+<li><a href="./kubernetes.html">Kubernetes</a> (Preferred)</li>
+<li>Docker (Coming Soon)</li>
+<li>Local (Coming Soon)</li>
 </ol>
-<h2 id="deploy-to-kubernetes"><a class="header" href="#deploy-to-kubernetes">Deploy to Kubernetes</a></h2>
-<p>Notes:</p>
-<ul>
-<li>You must have at least 1 node labeled with scoretrak_worker=&lt;your_internal_label&gt; so scoretrak can correctly deploy workers.</li>
-</ul>
-<h3 id="prerequisties"><a class="header" href="#prerequisties">Prerequisties</a></h3>
-<p>Ensure you have the following prerequisties installed.</p>
-<ul>
-<li><a href="https://helm.sh/docs/intro/install/#through-package-managers">helm</a></li>
-</ul>
-<h3 id="steps"><a class="header" href="#steps">Steps</a></h3>
-<ol>
-<li>
-<p>Setup your Kubernetes Cluster</p>
-</li>
-<li>
-<p>Install Scoretrak Helm Chart</p>
-</li>
-</ol>
-<p>Install scoretrak's helm chart repo from https://github.com/scoretrak/helm-charts</p>
-<pre><code class="language-bash">$ helm repo add scoretrak https://scoretrak.github.io/helm-charts
-</code></pre>
-<ol start="3">
-<li>Customize</li>
-</ol>
-<p>Customize the default yaml file located in the <a href="https://github.com/scoretrak/helm-charts/charts/scoretrak/values.yaml">scoretrak helm chart</a> to fit your environment.</p>
-<ol start="4">
-<li>Deploy</li>
-</ol>
-<p>Install the helm chart</p>
-<pre><code class="language-bash">helm install --timeout 1800 -f customized-values.yaml scoretrak/scoretrak
-</code></pre>
 
                     </main>
 
